@@ -1,0 +1,64 @@
+﻿2024-02-08T03:05:46.7572269Z ##[group]Run actions/checkout@v4
+2024-02-08T03:05:46.7572863Z with:
+2024-02-08T03:05:46.7573369Z   repository: sherlock-project/sherlock
+2024-02-08T03:05:46.7574145Z   token: ***
+2024-02-08T03:05:46.7574535Z   ssh-strict: true
+2024-02-08T03:05:46.7574994Z   persist-credentials: true
+2024-02-08T03:05:46.7575469Z   clean: true
+2024-02-08T03:05:46.7575873Z   sparse-checkout-cone-mode: true
+2024-02-08T03:05:46.7576407Z   fetch-depth: 1
+2024-02-08T03:05:46.7576810Z   fetch-tags: false
+2024-02-08T03:05:46.7577205Z   show-progress: true
+2024-02-08T03:05:46.7577626Z   lfs: false
+2024-02-08T03:05:46.7577999Z   submodules: false
+2024-02-08T03:05:46.7578398Z   set-safe-directory: true
+2024-02-08T03:05:46.7578857Z ##[endgroup]
+2024-02-08T03:05:47.0008311Z Syncing repository: sherlock-project/sherlock
+2024-02-08T03:05:47.0011680Z ##[group]Getting Git version info
+2024-02-08T03:05:47.0013327Z Working directory is '/home/runner/work/sherlock/sherlock'
+2024-02-08T03:05:47.0015517Z [command]/usr/bin/git version
+2024-02-08T03:05:47.0064638Z git version 2.43.0
+2024-02-08T03:05:47.0103689Z ##[endgroup]
+2024-02-08T03:05:47.0124184Z Temporarily overriding HOME='/home/runner/work/_temp/70c1df54-5de5-4d24-a759-01d5cebde8bb' before making global git config changes
+2024-02-08T03:05:47.0126863Z Adding repository directory to the temporary git global config as a safe directory
+2024-02-08T03:05:47.0129328Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sherlock/sherlock
+2024-02-08T03:05:47.0172840Z Deleting the contents of '/home/runner/work/sherlock/sherlock'
+2024-02-08T03:05:47.0175285Z ##[group]Initializing the repository
+2024-02-08T03:05:47.0179213Z [command]/usr/bin/git init /home/runner/work/sherlock/sherlock
+2024-02-08T03:05:47.0277649Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-02-08T03:05:47.0279183Z hint: is subject to change. To configure the initial branch name to use in all
+2024-02-08T03:05:47.0280792Z hint: of your new repositories, which will suppress this warning, call:
+2024-02-08T03:05:47.0281631Z hint: 
+2024-02-08T03:05:47.0282255Z hint: 	git config --global init.defaultBranch <name>
+2024-02-08T03:05:47.0282949Z hint: 
+2024-02-08T03:05:47.0283638Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-02-08T03:05:47.0285016Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-02-08T03:05:47.0286004Z hint: 
+2024-02-08T03:05:47.0286809Z hint: 	git branch -m <name>
+2024-02-08T03:05:47.0291582Z Initialized empty Git repository in /home/runner/work/sherlock/sherlock/.git/
+2024-02-08T03:05:47.0303580Z [command]/usr/bin/git remote add origin https://github.com/sherlock-project/sherlock
+2024-02-08T03:05:47.0340262Z ##[endgroup]
+2024-02-08T03:05:47.0342103Z ##[group]Disabling automatic garbage collection
+2024-02-08T03:05:47.0344028Z [command]/usr/bin/git config --local gc.auto 0
+2024-02-08T03:05:47.0374894Z ##[endgroup]
+2024-02-08T03:05:47.0376461Z ##[group]Setting up auth
+2024-02-08T03:05:47.0380916Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-02-08T03:05:47.0413451Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-02-08T03:05:47.0791108Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-02-08T03:05:47.0822178Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-02-08T03:05:47.1076882Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-02-08T03:05:47.1114286Z ##[endgroup]
+2024-02-08T03:05:47.1115478Z ##[group]Fetching the repository
+2024-02-08T03:05:47.1123991Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e3a09f8bf185d62bad8781e36fb64fa9637ba3d0:refs/remotes/origin/master
+2024-02-08T03:05:47.3420051Z From https://github.com/sherlock-project/sherlock
+2024-02-08T03:05:47.3421389Z  * [new ref]         e3a09f8bf185d62bad8781e36fb64fa9637ba3d0 -> origin/master
+2024-02-08T03:05:47.3449609Z ##[endgroup]
+2024-02-08T03:05:47.3450548Z ##[group]Determining the checkout info
+2024-02-08T03:05:47.3452118Z ##[endgroup]
+2024-02-08T03:05:47.3453022Z ##[group]Checking out the ref
+2024-02-08T03:05:47.3456340Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2024-02-08T03:05:47.3546622Z Reset branch 'master'
+2024-02-08T03:05:47.3548293Z branch 'master' set up to track 'origin/master'.
+2024-02-08T03:05:47.3555588Z ##[endgroup]
+2024-02-08T03:05:47.3590052Z [command]/usr/bin/git log -1 --format='%H'
+2024-02-08T03:05:47.3613432Z 'e3a09f8bf185d62bad8781e36fb64fa9637ba3d0'
